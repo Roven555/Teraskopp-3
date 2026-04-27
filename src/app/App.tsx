@@ -139,7 +139,7 @@ export default function App() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1770764598158-331fa2e83579?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGNhdmF0b3IlMjBmb3Jlc3QlMjB3b3JrfGVufDF8fHx8MTc3NjMzMzY2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+            src="/images/hero-excavator.jpg"
             alt="Excavator in forest"
             className="w-full h-full object-cover"
           />
