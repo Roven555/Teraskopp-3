@@ -188,92 +188,92 @@ export default function App() {
 
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {/* Project 1 */}
+            {/* Project 1 - Tiigid */}
             <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1559420902-02121fcdb2b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb25kJTIwZXhjYXZhdGlvbnxlbnwxfHx8fDE3NzYzMzM2NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Pond excavation"
+                src="/images/IMG_4941.JPG"
+                alt="Tiigi kaevamine"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Tiigi Rajamine</h3>
-                  <p className="text-[#a89f91]">Dekoratiivne veekogud</p>
+                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Tiigi Kaevamine</h3>
+                  <p className="text-[#a89f91]">Dekoratiivsed ja kasulikkud tiigid</p>
                 </div>
               </div>
             </div>
 
-            {/* Project 2 */}
+            {/* Project 2 - Kraavide kaevamine */}
             <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1740485132839-3edd43060988?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW5kJTIwZ3JhZGluZyUyMGNvbnN0cnVjdGlvbnxlbnwxfHx8fDE3NzYzMzM2NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Land grading"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Planeerimistööd</h3>
-                  <p className="text-[#a89f91]">Maa ettevalmistus ehituseks</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
-              <img
-                src="https://images.unsplash.com/photo-1661950571114-35f6979f7eb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjBjbGVhcmluZyUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3NzYzMzM2NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Forest clearing"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Metsatööd</h3>
-                  <p className="text-[#a89f91]">Võsa lõikus ja raie</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 4 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
-              <img
-                src="https://images.unsplash.com/photo-1773380498433-f6c511f82e40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXRjaCUyMGV4Y2F2YXRpb258ZW58MXx8fHwxNzc2MzMzNjYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Ditch excavation"
+                src="/images/IMG_4942.JPG"
+                alt="Kraavide kaevamine"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
                   <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Kraavide Kaevamine</h3>
-                  <p className="text-[#a89f91]">Drenaaži süsteemid</p>
+                  <p className="text-[#a89f91]">Drenaaži ja kraavide süsteemid</p>
                 </div>
               </div>
             </div>
 
-            {/* Project 5 */}
+            {/* Project 3 - Planeerimistööd */}
             <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1684600048629-09086734796d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBlcXVpcG1lbnQlMjBzdW5zZXR8ZW58MXx8fHwxNzc2MzMzNjYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Construction equipment"
+                src="/images/IMG_4944.JPG"
+                alt="Planeerimistööd"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Suurprojektid</h3>
-                  <p className="text-[#a89f91]">Keerukad maatööd</p>
+                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Planeerimistööd</h3>
+                  <p className="text-[#a89f91]">Maa ettevalmistus ja tasandamine</p>
                 </div>
               </div>
             </div>
 
-            {/* Project 6 */}
+            {/* Project 4 - Septikute paigaldamine */}
             <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1770764598158-331fa2e83579?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGNhdmF0b3IlMjBmb3Jlc3QlMjB3b3JrfGVufDF8fHx8MTc3NjMzMzY2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Forest excavation"
+                src="/images/IMG_4945.JPG"
+                alt="Septikute paigaldamine"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Metsateed</h3>
-                  <p className="text-[#a89f91]">Juurdepääsuteede rajamine</p>
+                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Septikute Paigaldamine</h3>
+                  <p className="text-[#a89f91]">Kanalisatsiooni süsteemid</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 5 - Maakütte paigaldus */}
+            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
+              <img
+                src="/images/IMG_4946.JPG"
+                alt="Maakütte paigaldus"
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Maakütte Paigaldus</h3>
+                  <p className="text-[#a89f91]">Maapõhise küttesüsteemi paigaldamine</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 6 - Võsagiljotiin */}
+            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
+              <img
+                src="/images/IMG_4947.JPG"
+                alt="Võsagiljotiin"
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Võsagiljotiin</h3>
+                  <p className="text-[#a89f91]">Õlgade ja okste purustamine</p>
                 </div>
               </div>
             </div>
@@ -463,7 +463,9 @@ export default function App() {
 
             <div className="flex items-center space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61577012332705&locale=et_EE"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-[#2d5016] hover:bg-[#FDB71A] rounded-full flex items-center justify-center transition-all group"
               >
                 <Facebook className="w-5 h-5 text-[#f5f5dc] group-hover:text-[#1a1a1a]" />

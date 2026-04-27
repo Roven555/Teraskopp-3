@@ -1,10 +1,28 @@
 import { X, ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
 
 interface GalleryProps {
   onClose: () => void;
 }
 
 export default function Gallery({ onClose }: GalleryProps) {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const images = [
+    '/images/IMG_4948.JPG',
+    '/images/IMG_4949.JPG',
+    '/images/IMG_4950.JPG',
+    '/images/IMG_4951.JPG',
+    '/images/IMG_4952.JPG',
+    '/images/IMG_4953.JPG',
+    '/images/IMG_4954.JPG',
+    '/images/IMG_4955.JPG',
+    '/images/IMG_4956.JPG',
+    '/images/IMG_4957.JPG',
+    '/images/IMG_4958.JPG',
+    '/images/IMG_4959.JPG',
+    '/images/DJI_0946-HDR-scaled.jpg',
+  ];
   return (
     <div className="min-h-screen bg-[#1a1a1a]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
       {/* Navigation */}
@@ -31,30 +49,39 @@ export default function Gallery({ onClose }: GalleryProps) {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Placeholder for gallery images */}
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {images.map((image, index) => (
               <div
-                key={item}
-                className="aspect-square bg-gradient-to-br from-[#2d5016] to-[#1a3009] rounded-lg flex items-center justify-center border-2 border-[#3d6a1f] hover:border-[#FDB71A] transition-all cursor-pointer group"
+                key={index}
+                onClick={() => setSelectedImage(image)}
+                className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-[#FDB71A]/20 transition-all cursor-pointer group"
               >
-                <div className="text-center">
-                  <div className="text-[#FDB71A] text-4xl font-bold group-hover:scale-110 transition-transform">
-                    {item}
-                  </div>
-                  <p className="text-[#a89f91] mt-2 text-sm">Pilt {item}</p>
-                </div>
+                <img src={image} alt="Galerii" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
             ))}
           </div>
-
-          {/* Placeholder text */}
-          <div className="mt-12 p-8 bg-[#2a2a2a] rounded-lg border-2 border-[#3d6a1f]">
-            <p className="text-[#a89f91] text-center">
-              Galeriisse saab lisada pilte tulevikus. Siin kuvatakse kõik tehtud tööde fotod.
-            </p>
-          </div>
         </div>
       </div>
+
+      {/* Modal - Large Image Viewer */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-[#f5f5dc] hover:text-[#FDB71A] transition-colors"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Full size" 
+            className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-[#0f0f0f] border-t border-[#2d5016] mt-12 py-8">
