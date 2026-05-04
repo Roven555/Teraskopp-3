@@ -191,7 +191,7 @@ export default function App() {
             {/* Project 1 - Tiigid */}
             <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
               <img
-                src="/images/IMG_4941.JPG"
+                src="/images/IMG_4944.JPG"
                 alt="Tiigi kaevamine"
                 className="w-full h-80 object-cover"
               />
@@ -417,11 +417,11 @@ export default function App() {
                 <div className="space-y-4">
                   <div>
                     <p className="text-[#a89f91] text-sm font-bold mb-1">TELEFON</p>
-                    <p className="text-[#f5f5dc] text-xl font-bold">+372 XXX XXXX</p>
+                    <p className="text-[#f5f5dc] text-xl font-bold">+372 56988715</p>
                   </div>
                   <div>
                     <p className="text-[#a89f91] text-sm font-bold mb-1">E-MAIL</p>
-                    <p className="text-[#f5f5dc] text-xl font-bold">info@teraskopp.ee</p>
+                    <p className="text-[#f5f5dc] text-xl font-bold">teraskopp@gmail.com</p>
                   </div>
                   <div>
                     <p className="text-[#a89f91] text-sm font-bold mb-1">AADRESS</p>
