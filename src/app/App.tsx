@@ -1,11 +1,20 @@
 import { useState } from 'react';
-import { Facebook, Instagram, Menu, X, Shovel, Mountain, Droplets, Trees } from 'lucide-react';
+import { Facebook, Menu, X, Shovel, Mountain, Droplets, Trees } from 'lucide-react';
+import { toast, Toaster } from 'sonner';
 import Gallery from './components/Gallery';
+
+interface FormData {
+  name: string;
+  email: string;
+  project: string;
+}
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('avaleht');
   const [showGallery, setShowGallery] = useState(false);
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', project: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -16,12 +25,67 @@ export default function App() {
     }
   };
 
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.project.trim()) {
+      toast.error('Palun täitke kõik väljad');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      toast.error('Palun sisestage kehtiv e-posti aadress');
+      return;
+    }
+
+    if (formData.project.length < 10) {
+      toast.error('Projekti kirjeldus peab olema vähemalt 10 tähemärgi pikkune');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || window.location.origin;
+      const response = await fetch(`${apiUrl}/api/sendEmail`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success('Sõnum saadetud edukalt! Aitäh kontakti võtmise eest.');
+        setFormData({ name: '', email: '', project: '' });
+      } else {
+        toast.error(data.error || 'Sõnumi saatmine ebaõnnestus');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Sõnumi saatmine ebaõnnestus. Palun proovige uuesti.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       {showGallery ? (
         <Gallery onClose={() => setShowGallery(false)} />
       ) : (
     <div className="min-h-screen bg-[#1a1a1a]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <Toaster position="top-center" />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -363,7 +427,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-2xl p-8 shadow-2xl border border-[#4a3829]">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-[#f5f5dc] font-bold mb-2">
                     NIMI
@@ -371,6 +435,8 @@ export default function App() {
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleFormChange}
                     className="w-full bg-[#0d0d0d] border-2 border-[#2d5016] rounded-lg px-4 py-3 text-[#f5f5dc] focus:outline-none focus:border-[#FDB71A] transition-colors"
                     placeholder="Teie nimi"
                   />
@@ -383,6 +449,8 @@ export default function App() {
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleFormChange}
                     className="w-full bg-[#0d0d0d] border-2 border-[#2d5016] rounded-lg px-4 py-3 text-[#f5f5dc] focus:outline-none focus:border-[#FDB71A] transition-colors"
                     placeholder="teie@email.ee"
                   />
@@ -395,6 +463,8 @@ export default function App() {
                   <textarea
                     id="project"
                     rows={6}
+                    value={formData.project}
+                    onChange={handleFormChange}
                     className="w-full bg-[#0d0d0d] border-2 border-[#2d5016] rounded-lg px-4 py-3 text-[#f5f5dc] focus:outline-none focus:border-[#FDB71A] transition-colors resize-none"
                     placeholder="Kirjeldage oma projekti..."
                   ></textarea>
@@ -402,9 +472,10 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#FDB71A] hover:bg-[#e5a615] text-[#1a1a1a] px-8 py-4 rounded-lg font-black text-lg tracking-widest transition-all shadow-lg shadow-[#FDB71A]/30 hover:shadow-xl hover:shadow-[#FDB71A]/50"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#FDB71A] hover:bg-[#e5a615] disabled:bg-[#a89f91] text-[#1a1a1a] px-8 py-4 rounded-lg font-black text-lg tracking-widest transition-all shadow-lg shadow-[#FDB71A]/30 hover:shadow-xl hover:shadow-[#FDB71A]/50 disabled:shadow-none"
                 >
-                  SAADA SÕNUM
+                  {isSubmitting ? 'Saadame...' : 'SAADA SÕNUM'}
                 </button>
               </form>
             </div>
@@ -469,12 +540,6 @@ export default function App() {
                 className="w-10 h-10 bg-[#2d5016] hover:bg-[#FDB71A] rounded-full flex items-center justify-center transition-all group"
               >
                 <Facebook className="w-5 h-5 text-[#f5f5dc] group-hover:text-[#1a1a1a]" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-[#2d5016] hover:bg-[#FDB71A] rounded-full flex items-center justify-center transition-all group"
-              >
-                <Instagram className="w-5 h-5 text-[#f5f5dc] group-hover:text-[#1a1a1a]" />
               </a>
             </div>
           </div>
