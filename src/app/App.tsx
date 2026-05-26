@@ -285,7 +285,7 @@ export default function App() {
             {/* Project 3 - Planeerimistööd */}
             <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
               <img
-                src="/images/IMG_4944.JPG"
+                src="/images/IMG_4950.JPG"
                 alt="Planeerimistööd"
                 className="w-full h-80 object-cover"
               />
@@ -297,50 +297,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Project 4 - Septikute paigaldamine */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
-              <img
-                src="/images/IMG_4945.JPG"
-                alt="Septikute paigaldamine"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Septikute Paigaldamine</h3>
-                  <p className="text-[#a89f91]">Kanalisatsiooni süsteemid</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 5 - Maakütte paigaldus */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
-              <img
-                src="/images/IMG_4946.JPG"
-                alt="Maakütte paigaldus"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Maakütte Paigaldus</h3>
-                  <p className="text-[#a89f91]">Maapõhise küttesüsteemi paigaldamine</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 6 - Võsagiljotiin */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
-              <img
-                src="/images/IMG_4947.JPG"
-                alt="Võsagiljotiin"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc] mb-2">Võsagiljotiin</h3>
-                  <p className="text-[#a89f91]">Õlgade ja okste purustamine</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="text-center">
@@ -513,7 +469,7 @@ export default function App() {
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                   </div>
-                  <p className="text-[#a89f91] text-lg">Teenindame kogu Eestit</p>
+                  <p className="text-[#a89f91] text-lg">Tartust 80 kilomeetri raadiuses</p>
                 </div>
               </div>
             </div>
