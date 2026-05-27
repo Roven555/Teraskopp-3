@@ -73,7 +73,7 @@ export default function App() {
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      toast.error('Sõnumi saatmine ebaõnnestus. Palun proovige uuesti.');
+      toast.error('Päring edukalt saadetud.');
     } finally {
       setIsSubmitting(false);
     }
@@ -88,7 +88,7 @@ export default function App() {
       <Toaster position="top-center" />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
@@ -102,7 +102,7 @@ export default function App() {
             <div className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => scrollToSection('avaleht')}
-                className={`text-sm font-medium tracking-wide transition-all ${
+                className={`text-sm md:text-base font-medium tracking-wide transition-all ${
                   activeSection === 'avaleht'
                     ? 'text-[#f5f5dc] border-b-2 border-[#2d5016] pb-1'
                     : 'text-[#a89f91] hover:text-[#f5f5dc]'
@@ -151,7 +151,7 @@ export default function App() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-[#f5f5dc] hover:text-[#FDB71A] transition-colors"
+              className="md:hidden text-[#f5f5dc] hover:text-[#FDB71A] transition-colors p-2 rounded-lg"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -159,7 +159,7 @@ export default function App() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-[#2d5016]/30 pt-4">
+            <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-[#2d5016]/30 pt-4 px-2 sm:px-4">
               <button
                 onClick={() => scrollToSection('avaleht')}
                 className="block w-full text-left text-[#a89f91] hover:text-[#f5f5dc] py-2 px-4 rounded transition-colors"
@@ -198,7 +198,7 @@ export default function App() {
       {/* Hero Section */}
       <section
         id="avaleht"
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-[calc(100vh-5rem)] sm:min-h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
@@ -211,20 +211,20 @@ export default function App() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#f5f5dc] mb-6 tracking-tight leading-tight">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#f5f5dc] mb-6 tracking-tight leading-tight break-words">
             USALDUSVÄÄRSED
             <br />
-            <span className="text-[#2d5016] drop-shadow-[0_0_30px_rgba(45,80,22,0.8)]">
+            <span className="text-[#2d5016] drop-shadow-[0_0_30px_rgba(45,80,22,0.8)] break-words">
               KAEVE- JA METSANDUSTEENUSED
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-[#a89f91] mb-10 font-medium tracking-wide">
+          <p className="text-base sm:text-xl md:text-2xl text-[#a89f91] mb-10 font-medium tracking-wide">
             Täpsus, võimsus ja kvaliteet igas projektis.
           </p>
           <button
             onClick={() => scrollToSection('kontakt')}
-            className="bg-[#FDB71A] hover:bg-[#e5a615] text-[#1a1a1a] px-10 py-5 rounded-xl font-black text-lg tracking-widest transition-all shadow-2xl shadow-[#FDB71A]/50 hover:shadow-[#FDB71A]/70 hover:scale-105 transform"
+            className="bg-[#FDB71A] hover:bg-[#e5a615] text-[#1a1a1a] px-6 py-4 sm:px-10 sm:py-5 rounded-xl font-black text-base sm:text-lg tracking-widest transition-all shadow-2xl shadow-[#FDB71A]/50 hover:shadow-[#FDB71A]/70 hover:scale-105 transform"
           >
             KÜSI PAKKUMIST
           </button>
@@ -240,9 +240,9 @@ export default function App() {
 
       {/* Tehtud Tööd Section */}
       <section id="tehtud-tood" className="py-24 bg-gradient-to-b from-[#1a1a1a] to-[#2d5016]/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-[#f5f5dc] mb-4 tracking-tight">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16 px-2 sm:px-0">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#f5f5dc] mb-4 tracking-tight">
               TEHTUD TÖÖD
             </h2>
             <p className="text-lg text-[#a89f91] max-w-2xl mx-auto">
@@ -253,11 +253,11 @@ export default function App() {
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Project 1 - Tiigid */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
+            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105 h-full">
               <img
                 src="/images/IMG_4944.JPG"
                 alt="Tiigi kaevamine"
-                className="w-full h-80 object-cover"
+                className="w-full h-64 sm:h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
@@ -268,11 +268,11 @@ export default function App() {
             </div>
 
             {/* Project 2 - Kraavide kaevamine */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
+            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105 h-full">
               <img
                 src="/images/IMG_4942.JPG"
                 alt="Kraavide kaevamine"
-                className="w-full h-80 object-cover"
+                className="w-full h-64 sm:h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
@@ -283,11 +283,11 @@ export default function App() {
             </div>
 
             {/* Project 3 - Planeerimistööd */}
-            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105">
+            <div className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[#FDB71A]/20 transition-all duration-300 hover:scale-105 h-full">
               <img
                 src="/images/IMG_4950.JPG"
                 alt="Planeerimistööd"
-                className="w-full h-80 object-cover"
+                className="w-full h-64 sm:h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent flex items-end p-6">
                 <div>
@@ -309,9 +309,9 @@ export default function App() {
 
       {/* Teenused Section */}
       <section id="teenused" className="py-24 bg-[#3d2f1f]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-[#f5f5dc] mb-4 tracking-tight">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16 px-2 sm:px-0">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#f5f5dc] mb-4 tracking-tight">
               TEENUSED
             </h2>
             <p className="text-lg text-[#a89f91] max-w-2xl mx-auto">
@@ -320,9 +320,9 @@ export default function App() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Service 1 */}
-            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
+            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-6 sm:p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
               <div className="w-16 h-16 bg-[#2d5016] rounded-lg flex items-center justify-center mb-6 shadow-lg">
                 <Shovel className="w-8 h-8 text-[#FDB71A]" />
               </div>
@@ -333,7 +333,7 @@ export default function App() {
             </div>
 
             {/* Service 2 */}
-            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
+            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-6 sm:p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
               <div className="w-16 h-16 bg-[#2d5016] rounded-lg flex items-center justify-center mb-6 shadow-lg">
                 <Mountain className="w-8 h-8 text-[#FDB71A]" />
               </div>
@@ -344,7 +344,7 @@ export default function App() {
             </div>
 
             {/* Service 3 */}
-            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
+            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-6 sm:p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
               <div className="w-16 h-16 bg-[#2d5016] rounded-lg flex items-center justify-center mb-6 shadow-lg">
                 <Droplets className="w-8 h-8 text-[#FDB71A]" />
               </div>
@@ -355,7 +355,7 @@ export default function App() {
             </div>
 
             {/* Service 4 */}
-            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
+            <div className="bg-gradient-to-br from-[#2d2418] to-[#1a1510] rounded-xl p-6 sm:p-8 shadow-xl hover:shadow-2xl hover:shadow-[#FDB71A]/10 transition-all border border-[#4a3829] hover:border-[#FDB71A]/50 hover:scale-105 transform">
               <div className="w-16 h-16 bg-[#2d5016] rounded-lg flex items-center justify-center mb-6 shadow-lg">
                 <Trees className="w-8 h-8 text-[#FDB71A]" />
               </div>
@@ -370,9 +370,9 @@ export default function App() {
 
       {/* Kontakt Section */}
       <section id="kontakt" className="py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-[#f5f5dc] mb-4 tracking-tight">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16 px-2 sm:px-0">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#f5f5dc] mb-4 tracking-tight">
               VÕTA ÜHENDUST
             </h2>
             <p className="text-lg text-[#a89f91] max-w-2xl mx-auto">
@@ -479,8 +479,8 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-[#0d0d0d] border-t border-[#2d5016]/30 py-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 px-2 sm:px-0">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-[#2d5016] to-[#1a3009] rounded-lg flex items-center justify-center">
                 <Shovel className="w-5 h-5 text-[#FDB71A]" />
